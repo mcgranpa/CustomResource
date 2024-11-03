@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MainStats" load_steps=2 format=3 uid="uid://hmlpm1ajij7w"]
+
+[ext_resource type="Script" path="res://Resources/mainstats.gd" id="1_wlopi"]
+
+[resource]
+script = ExtResource("1_wlopi")
+health = 205
+strength = 115
+hit_points = 48

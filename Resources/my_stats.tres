@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MainStats" load_steps=2 format=3 uid="uid://568mhvcmxnpj"]
+
+[ext_resource type="Script" path="res://Resources/mainstats.gd" id="1_sj1va"]
+
+[resource]
+script = ExtResource("1_sj1va")
+health = 399
+strength = 380
+hit_points = 25

@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://ekejidgwhbk0"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_2r3ys"]
+[ext_resource type="Script" path="res://animated_sprite_2d.gd" id="1_jkfmf"]
+[ext_resource type="Resource" uid="uid://dtjxdn20f3fp1" path="res://mystats.tres" id="2_02i3w"]
+[ext_resource type="Resource" uid="uid://bgxsl0wtc6lce" path="res://new_resource.tres" id="3_ba04i"]
+[ext_resource type="PackedScene" uid="uid://d3bcwqf44ynum" path="res://fred.tscn" id="4_5j8of"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_2r3ys")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+script = ExtResource("1_jkfmf")
+mine = ExtResource("2_02i3w")
+two = 333
+mysig = "first"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+script = ExtResource("1_jkfmf")
+mine = ExtResource("3_ba04i")
+mysig = "second"
+mycolor = 1
+
+[node name="Fred" parent="." instance=ExtResource("4_5j8of")]

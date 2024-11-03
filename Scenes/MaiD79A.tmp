@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://ekejidgwhbk0"]
+
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_2r3ys"]
+[ext_resource type="PackedScene" uid="uid://d3bcwqf44ynum" path="res://Scenes/fred.tscn" id="4_5j8of"]
+[ext_resource type="Resource" uid="uid://568mhvcmxnpj" path="res://Resources/my_stats.tres" id="4_opumd"]
+[ext_resource type="Resource" uid="uid://hmlpm1ajij7w" path="res://Resources/my_stats_2.tres" id="5_e6p1d"]
+[ext_resource type="PackedScene" uid="uid://f4jp7g6cwepp" path="res://Scenes/signal_node.tscn" id="5_fr3cb"]
+
+[sub_resource type="SystemFont" id="SystemFont_kh2my"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_2r3ys")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 56.0
+offset_top = 34.0
+offset_right = 271.0
+offset_bottom = 107.0
+theme_override_fonts/font = SubResource("SystemFont_kh2my")
+theme_override_font_sizes/font_size = 41
+text = "Press"
+
+[node name="Fred" parent="." instance=ExtResource("4_5j8of")]
+
+[node name="SignalNode" parent="." instance=ExtResource("5_fr3cb")]
+mine = ExtResource("4_opumd")
+mydata = "data for child 1"
+child_name = "Child 1"
+mycolor = 0
+
+[node name="SignalNode2" parent="." instance=ExtResource("5_fr3cb")]
+position = Vector2(70, 162)
+mine = ExtResource("5_e6p1d")
+two = 400
+mydata = "data for child 2"
+child_name = "Child 2"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 351.0
+offset_top = 44.0
+offset_right = 968.0
+offset_bottom = 188.0
+editable = false
+wrap_mode = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 277.0
+offset_right = 647.0
+offset_bottom = 471.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
